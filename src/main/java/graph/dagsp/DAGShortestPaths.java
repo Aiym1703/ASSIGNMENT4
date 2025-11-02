@@ -2,8 +2,8 @@ package graph.dagsp;
 import utils.Metrics;
 import java.util.*;
 /**
- * Single-source shortest paths (edge weights) and longest paths  on a DAG,
- * processing vertices in a provided topological order
+ * Computes single-source shortest paths  and longest paths  on a DAG,
+ * processing vertices
  */
 public class DAGShortestPaths {
     private final int[] dist;
