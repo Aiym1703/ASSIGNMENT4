@@ -1,8 +1,8 @@
 package graph.scc;
 import java.util.*;
 /**
- * Represents the condensation graph (DAG) built after SCC compression
- * Each SCC is represented as a single vertex, and edges connect components
+ * represents the condensation graph (DAG) built after SCC compression
+ * each SCC is represented as a single vertex, and edges connect components
  */
 public class CondensationGraph {
     private final List<List<Integer>> dag;
@@ -11,20 +11,20 @@ public class CondensationGraph {
         int n = adj.size();
         compId = new int[n];
 
-        // Map each vertex to its SCC component
+        // mapping each vertex to its SCC component
         for (int i = 0; i < sccs.size(); i++) {
             for (int node : sccs.get(i)) {
                 compId[node] = i;
             }
         }
 
-        // Initialize DAG adjacency list
+        // initializes DAG adjacency list
         dag = new ArrayList<>();
         for (int i = 0; i < sccs.size(); i++) {
             dag.add(new ArrayList<>());
         }
 
-        // Add edges between SCCs
+        // adding edges between scc
         Set<String> added = new HashSet<>();
         for (int u = 0; u < n; u++) {
             for (int v : adj.get(u)) {
